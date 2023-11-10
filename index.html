@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome Icon v5 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Custom JS -->
@@ -17,17 +20,15 @@
     <!-- Body -->
     <main>
         <!-- Input: Date of Birth  -->
-        <section>
-
-        </section>
-        <!-- Button: Calculate Age -->
-        <section>
-
-        </section>
-        <!-- Div: Age result -->
-        <section>
-
-        </section>
+        <section class="container">
+            <input type="date" name="dob" id="dob" required>
+            <!-- Button: Calculate Age --> 
+            <button type="button" onclick="calculate()">Calculate Age</button>
+            <!-- Button: Rest Date of Birth & Age --> 
+            <button type="reset" onclick="reset()"><i class="fas fa-redo"></i></button>
+            <!-- Div: Age result --> 
+            <div class="display" id="age"></div>
+        </section>        
     </main>
 </body>
 </html>
