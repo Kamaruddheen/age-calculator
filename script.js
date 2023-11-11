@@ -18,6 +18,9 @@ function validate(today, dob) {
     
     // Check for empty input
     if (dob === null || dob === undefined) {
+        // Logs for debugging
+        console.log("Empty date : ", dob);
+        
         // Display the Error Message - Empty Date
         document.getElementById("age").innerHTML = "Date of Birth can not be empty !"
         document.getElementById("age").classList.add("asterisk")
@@ -27,7 +30,7 @@ function validate(today, dob) {
         
     }
     // Check for input date is today or not 
-    else if (today.toISOString().split("T")[0] === dob.toISOString().split("T")[0]) {
+    if (today.toISOString().split("T")[0] === dob.toISOString().split("T")[0]) {
         // Display the Message - Age as 0
         document.getElementById("age").innerHTML = "Age: 0 <span class=\"text-muted\">(DOB same date as today)</span>"
 
@@ -35,7 +38,10 @@ function validate(today, dob) {
         return false
     }
     // Check for future date (input shouldn't be future date)
-    else if (dob > today) {        
+    if (dob > today) {
+        // Logs for debugging
+        console.log("Inside Future validation...");
+
         // Display the Error Message - Future Date
         document.getElementById("age").innerHTML = "Future date is not allowed"
         document.getElementById("age").classList.add("asterisk")
@@ -43,7 +49,18 @@ function validate(today, dob) {
         // Return false for invalid input
         return false
     }
-    
+    // This validates that the birth day entered does not exceed the maximum possible days for the given month and year combination
+    if (new Date(dob.getFullYear(), dob.getMonth() + 1, 0).getDate() < dob.getDate()) {
+        // Logs Invalid Date for debugging
+        console.log("Invalid Date : ", new Date(dob.getFullYear(), dob.getMonth() + 1, 0), dob.getDate())
+
+        // Display the Error Message - Date extends actual month max date
+        document.getElementById("age").innerHTML = "Birth day entered can't exceed the maximum possible days in a month"
+        document.getElementById("age").classList.add("asterisk")
+
+        // Return false for invalid input
+        return false
+    }
     // Log today, date for debugging
     console.log(today.toISOString().split("T")[0], dob.toISOString().split("T")[0]);
 
@@ -82,24 +99,29 @@ function calculate() {
         // Subtracting 1 from the years since the birthday is still upcoming
         age_year--
     } else {
+        console.log("Inside Month: Current Month.....");
         age_month = current_month - dob_month
     }
 
     // Calculate days
     if (dob_days > current_days) {
+        // Logs for debugging
+        console.log("Inside Day: DOB Date > Today.....", new Date(dob_year, dob_month, 0).getDate(), dob_days);
         // If birth date is greater than current date, the birthday has not passed yet
         // So we calculate days by taking current date + (total days in birth month - birthday)
-        age_days = current_days + (new Date(dob_year, dob_month, 0).getDate() - dob_days)
-        // Subtracting 1 from the month since the birthday is still upcoming
-        age_month--
+        // Adding 1 to include the birth day in the count
+        age_days = current_days + (new Date(dob_year, dob_month, 0).getDate() - dob_days + 1) // new Date(year, month, 0) returns last day of month        
+        age_month-- // Subtracting 1 from the month since the birthday is still upcoming
     } else {
-        // 
+        // Logs for debugging
+        console.log("Inside Day: Current Day.....");        
         age_days = current_days - dob_days
     }
 
     // TODO: check month and date is properly calculated
     // Set month as 11 if month goes to negative value
     if (age_month < 0) {
+        // Logs for debugging
         console.log("Inside Month is negative.....");
         age_month = 11
         age_year--
