@@ -7,8 +7,19 @@ body {
     background: linear-gradient(145deg, rgba(2,19,93,1) 0%, rgba(7,236,237,1) 100%);
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     margin: 50px 30px;
+}
+
+label {
+    font-size: 1.1rem;
+    margin-bottom: 100px;
 }
 
 button[type=button] {
@@ -30,11 +41,25 @@ button[type=reset] {
 
 input[type=date] {
     border: 0;
-    border-radius: 4px;
-    padding: 6px 6px;
-    width: 130px;
     outline: 0;
+    border-radius: 10px;
+    padding: 7px;
+    width: 110px;    
+    text-align: center;
 }
+
+/* input[type=date]::-webkit-calendar-picker-indicator {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    position: absolute;
+    background-position: calc(100% -10px);
+    background-size: 30px;
+    cursor: pointer;
+} */
 
 #age {
     margin: 10px;
@@ -43,4 +68,10 @@ input[type=date] {
 
 .asterisk {
     color: red;
+}
+
+.text-muted {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6c757d;
 }
