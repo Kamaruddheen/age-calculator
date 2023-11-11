@@ -18,18 +18,45 @@
         <h1>Age Calculator</h1>
     </header>
     <!-- Body -->
-    <main>
+    <!-- Glassmorphism Background -->
+    <section>
+        <div class="glass animate1" style="width: 68px; height: 172px; top: 67px; left: 1452px; transform: rotate(0.694654turn); opacity: 0.1462;"></div>
+        <div class="glass animate1" style="width: 79px; height: 50px; top: 373px; left: 777px; transform: rotate(0.963995turn); opacity: 0.049375;"></div>
+        <div class="glass animate1" style="width: 189px; height: 167px; top: 367px; left: 1117px; transform: rotate(0.357854turn); opacity: 0.394537;"></div>
+        <div class="glass animate1" style="width: 124px; height: 143px; top: 606px; left: 658px; transform: rotate(0.321488turn); opacity: 0.22165;"></div>
+        <div class="glass animate1" style="width: 64px; height: 66px; top: 419px; left: 135px; transform: rotate(0.703343turn); opacity: 0.0528;"></div>
+        <div class="glass animate1" style="width: 118px; height: 113px; top: 536px; left: 363px; transform: rotate(0.904639turn); opacity: 0.166675;"></div>
+        <div class="glass animate1" style="width: 112px; height: 62px; top: 574px; left: 1454px; transform: rotate(0.0508476turn); opacity: 0.0868;"></div>
+        <div class="glass animate1" style="width: 114px; height: 147px; top: 205px; left: 115px; transform: rotate(0.56turn); opacity: 0.209475;"></div>
+        <div class="glass animate2" style="width: 63px; height: 108px; top: 548px; left: 1335px; transform: rotate(0.619838turn); opacity: 0.08505;"></div>
+        <div class="glass animate2" style="width: 149px; height: 138px; top: 271px; left: 1226px; transform: rotate(0.837196turn); opacity: 0.257025;"></div>
+        <div class="glass animate2" style="width: 152px; height: 141px; top: 57px; left: 18px; transform: rotate(0.482354turn); opacity: 0.2679;"></div>
+        <div class="glass animate2" style="width: 120px; height: 196px; top: 424px; left: 383px; transform: rotate(0.903537turn); opacity: 0.294;"></div>
+        <div class="glass animate2" style="width: 141px; height: 151px; top: 163px; left: 596px; transform: rotate(0.202194turn); opacity: 0.266138;"></div>
+        <div class="glass animate2" style="width: 145px; height: 86px; top: 418px; left: 41px; transform: rotate(0.833872turn); opacity: 0.155875;"></div>
+        <div class="glass animate2" style="width: 183px; height: 128px; top: 262px; left: 723px; transform: rotate(0.0788177turn); opacity: 0.2928;"></div>
+        <div class="glass animate2" style="width: 152px; height: 134px; top: 440px; left: 439px; transform: rotate(0.509084turn); opacity: 0.2546;"></div>
+        <div class="glass animate3" style="width: 176px; height: 65px; top: 540px; left: 556px; transform: rotate(0.983719turn); opacity: 0.143;"></div>
+        <div class="glass animate3" style="width: 110px; height: 54px; top: 574px; left: 851px; transform: rotate(0.86465turn); opacity: 0.07425;"></div>
+        <div class="glass animate3" style="width: 163px; height: 63px; top: 680px; left: 51px; transform: rotate(0.526964turn); opacity: 0.128362;"></div>
+        <div class="glass animate3" style="width: 80px; height: 198px; top: 536px; left: 1276px; transform: rotate(0.757364turn); opacity: 0.198;"></div>
+    </section>
+    <main class="container">
         <!-- Input: Date of Birth  -->
-        <section class="container">
-            <label for="dob">Date of Birth<span class="asterisk">*</span></label>
+        <section class="dob">
+            <label for="dob">Date of Birth<span class="asterisk">*</span> : </label>
             <input type="date" name="dob" id="dob" required>
+        </section>
+        <section class="button">
             <!-- Button: Calculate Age --> 
             <button type="button" onclick="calculate()">Calculate Age</button>
             <!-- Button: Rest Date of Birth & Age --> 
             <button type="reset" onclick="reset()"><i class="fas fa-redo"></i></button>
+        </section>
+        <section>
             <!-- Div: Age result --> 
             <div class="display" id="age"></div>
-        </section>        
+        </section>
     </main>
 </body>
 </html>
