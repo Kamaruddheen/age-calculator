@@ -8,9 +8,13 @@ let today = new Date()
 // Set input field default to today's date
 // document.getElementById("dob").valueAsDate = today
 
-// Disabling future dates by setting max date to today
-document.getElementById("dob").max = today.toISOString().split("T")[0]
+window.onload = function() {
+    // Disabling future dates by setting max date to today
+    document.getElementById("dob").max = today.toISOString().split("T")[0]
+};
 
+
+// To Validate the birth date
 function validate(today, dob) {
 
     // Log inputs for debugging
@@ -93,12 +97,15 @@ function calculate() {
 
     // Calculate months
     if (dob_month > current_month) {
+        // Logs for debugging
+        console.log("Inside Month: DOB Month > Today.....");
         // If birth month is greater than current month, it means that birthday has not passed yet this year
         // So we calculate the months by taking current month + (12 - birth month)
         age_month = current_month + (12 - dob_month)
         // Subtracting 1 from the years since the birthday is still upcoming
         age_year--
     } else {
+        // Logs for debugging
         console.log("Inside Month: Current Month.....");
         age_month = current_month - dob_month
     }
@@ -140,7 +147,7 @@ function calculate() {
 // Reset the birthdate and Age value
 function reset() {
     // Set input field default to today's date
-    document.getElementById("dob").valueAsDate = today
+    document.getElementById("dob").value = ""
     // Rest age display value and property
     document.getElementById("age").innerHTML = ""
     document.getElementById("age").classList.remove("asterisk")
