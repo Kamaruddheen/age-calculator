@@ -145,3 +145,53 @@ input[type=date] {
         opacity: 0;
     }
 }
+
+@media only screen and (max-width: 600px) {
+
+    body {
+        font-size: 0.8rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .container {
+        width: auto;
+        padding: 35px;
+    }
+
+    button[type=button] {
+        font-size: 0.8rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;        
+    }
+    
+    button[type=reset] {
+        font-size: 0.7rem;
+    }
+    
+    input[type=date] {
+        border-radius: 10px;
+        padding: 5px;
+        margin-left: 5px;
+        width: 110px;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 400px) {
+
+    .container {
+        padding: 25px;
+    }
+    
+    input[type=date] {
+        border-radius: 10px;
+        padding: 5px;
+        margin-top: 5px;
+        width: 100px;
+    }
+
+    .colon {
+        display: none;
+    }
+}
