@@ -1,13 +1,10 @@
-// import { validate } from './js/validate.js';
-
-// TODO: Set preset value on webpage load
-
 // Set the current date as the today value
 let today = new Date()
 
 // Set input field default to today's date
 // document.getElementById("dob").valueAsDate = today
 
+// Set preset value on webpage load
 window.onload = function() {
     // Disabling future dates by setting max date to today
     document.getElementById("dob").max = today.toISOString().split("T")[0]

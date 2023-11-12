@@ -2,11 +2,13 @@ body {
     font-family: cursive, 'Courier New';
     font-size: 1.1rem;
     width: auto;
-    height: 98vh;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
-    /* 000814 */
     background-color: #000814;
+    background-repeat: no-repeat;
     background-image: 
         radial-gradient(at 47% 33%, hsl(180.00, 100%, 14.000000000000002%) 0, transparent 59%), 
         radial-gradient(at 82% 65%, hsl(211.12, 90%, 41%) 0, transparent 55%);
@@ -104,7 +106,7 @@ input[type=date] {
 /* Glassmorphism & Animation */
 
 .glass {
-    position: absolute;
+    position: fixed;
     background: rgba(208, 218, 252, 0.26);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
