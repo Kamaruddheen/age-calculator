@@ -21,9 +21,15 @@ To use the age calculator,
 - Validates date input
 - Fully responsive design
 
+## Resources
+
+- [Color Palette](https://coolors.co)
+- [Glassmorphism CSS Generator](https://css.glass)
+- [Animation](https://blog.hubspot.com/website/css-animation-examples)
+
 ## Built With
 
-<a src="https://www.w3schools.com/html/"><img src="https://img.icons8.com/color/48/000000/html-5.png"/></a>
+<a src="https://www.w3schools.com/html/"><img src="https://img.icons8.com/color/48/000000/html-5.png"/></a> 
 <a src="https://www.w3schools.com/css/"><img src="https://img.icons8.com/color/48/000000/css3.png"/></a>
 <a src="https://www.javascript.com/"><img src="https://img.icons8.com/color/48/000000/javascript.png"/></a>
 

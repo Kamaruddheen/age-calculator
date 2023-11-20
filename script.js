@@ -122,7 +122,6 @@ function calculate() {
         age_days = current_days - dob_days
     }
 
-    // TODO: check month and date is properly calculated
     // Set month as 11 if month goes to negative value
     if (age_month < 0) {
         // Logs for debugging
