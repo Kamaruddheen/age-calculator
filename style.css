@@ -248,6 +248,13 @@ input[type=date] {
     border-radius: 50%;
 }
 
+.calendar-days div.future-date,
+.calendar-days div.future-date:hover {
+    color: #06d69e60;
+    cursor: none;
+    pointer-events:none;
+}
+
 .calendar-days div.curr-date span {
     display: none;
 }

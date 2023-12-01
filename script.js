@@ -212,6 +212,7 @@ generateCalendar = (month, year) => {
 
   calendar_days.innerHTML = "";
 
+  // Current/Today date
   let currDate = new Date();
   if (!month) month = currDate.getMonth();
   if (!year) year = currDate.getFullYear();
@@ -221,7 +222,6 @@ generateCalendar = (month, year) => {
   calendar_header_year.innerHTML = year;
 
   // get first day of month
-
   let first_day = new Date(year, month, 1);
 
   for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
@@ -229,16 +229,28 @@ generateCalendar = (month, year) => {
     if (i >= first_day.getDay()) {
       day.classList.add("calendar-day-hover");
       day.innerHTML = i - first_day.getDay() + 1;
-      day.innerHTML += `<span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>`;
+
       if (
         i - first_day.getDay() + 1 === currDate.getDate() &&
         year === currDate.getFullYear() &&
         month === currDate.getMonth()
       ) {
         day.classList.add("curr-date");
+      } else if (
+        i - first_day.getDay() + 1 >= currDate.getDate() &&
+        year >= currDate.getFullYear() &&
+        month >= currDate.getMonth()
+      ) {
+        // Current month future date
+        day.classList.add("future-date");
+      } else if (currDate < first_day) {
+        // Future date and beyond
+        day.classList.add("future-date");
+      } else {
+        day.innerHTML += `<span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>`;
       }
     }
     day.onclick = () => {
