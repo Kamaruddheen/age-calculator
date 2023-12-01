@@ -149,16 +149,6 @@ function calculate(dob) {
   return age;
 }
 
-// Reset the birthdate and Age value
-function reset() {
-  // Rest dob display value and property
-  document.getElementById("select-day").classList.remove("bg-green");
-  document.getElementById("select-day").removeAttribute("id", "select-day");
-  // Rest age display value and property
-  document.getElementById("age").innerHTML = "";
-  document.getElementById("age").classList.remove("asterisk");
-}
-
 // document.getElementById("age").innerHTML = "Age : " + calculate()
 
 // * DatePicker
@@ -283,12 +273,21 @@ let month_list = calendar.querySelector(".month-list");
 month_names.forEach((e, index) => {
   let month = document.createElement("div");
   month.innerHTML = `<div data-month="${index}">${e}</div>`;
+
   month.onclick = () => {
     month_list.classList.remove("show");
     curr_month.value = index;
     generateCalendar(index, curr_year.value);
   };
+
   month_list.appendChild(month);
+
+  // if (index === 2 || index === 5 || index === 8) {
+  //   let line = document.createElement("span");
+  //   line.classList.add("border-line");
+  //   // line.innerHTML = `<span class="border-line"></span>`;
+  //   month_list.appendChild(line);
+  // }
 });
 
 let month_picker = calendar.querySelector("#month-picker");
@@ -313,3 +312,18 @@ document.querySelector("#next-year").onclick = () => {
   ++curr_year.value;
   generateCalendar(curr_month.value, curr_year.value);
 };
+
+// Reset the birthdate and Age value
+function reset() {
+  // Re-generating calendar
+  curr_month = { value: currDate.getMonth() };
+  curr_year = { value: currDate.getFullYear() };
+  generateCalendar(curr_month.value, curr_year.value);
+
+  // Rest dob display value and property
+  // document.getElementById("select-day").classList.remove("bg-green");
+  // document.getElementById("select-day").removeAttribute("id", "select-day");
+  // Rest age display value and property
+  document.getElementById("age").innerHTML = "";
+  document.getElementById("age").classList.remove("asterisk");
+}

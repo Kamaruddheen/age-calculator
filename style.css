@@ -56,11 +56,6 @@ section.dob {
     margin-bottom: 20px;    
 }
 
-section.button {
-    display: flex;
-    margin: 25px 0;
-}
-
 label {    
     margin-bottom: 100px;
     color: #9fffcb;
@@ -70,24 +65,14 @@ button {
     cursor: pointer;
 }
 
-button[type=button] {
-    font-size: 1rem;
-    font-family: cursive;
-    background-color: #073b4c;
-    color: white;
-    border: 0;
-    border-radius: 4px;
-    padding: 6px 12px;
-    margin-right: 10px;
-}
-
 button[type=reset] {
-    font-size: 0.9rem;
-    background-color: #ef476f;
-    color: white;
+    position: absolute;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #06d6a0;
     border: 0;
-    border-radius: 4px;
-    padding: 8px 10px;
+    right: 20px;
+    top: 20px;
 }
 
 input[type=date] {
@@ -101,8 +86,8 @@ input[type=date] {
 }
 
 #age {
-    /* margin-top: 25px;
-    margin-bottom: 25px; */
+    margin-top: 25px;
+    /* margin-bottom: 25px; */
     color: #06d6a0;
     font-size: large;
     font-weight: bold;
@@ -315,9 +300,6 @@ input[type=date] {
 .month-list > div {
     display: grid;
     place-items: center;
-}
-
-.month-list > div {
     width: 100%;
     padding: 5px 20px;
     border-radius: 10px;
@@ -398,11 +380,6 @@ input[type=date] {
     .container {
         width: auto;
         padding: 35px;
-    }
-
-    button[type=button] {
-        font-size: 0.8rem;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;        
     }
     
     button[type=reset] {
