@@ -281,13 +281,6 @@ month_names.forEach((e, index) => {
   };
 
   month_list.appendChild(month);
-
-  // if (index === 2 || index === 5 || index === 8) {
-  //   let line = document.createElement("span");
-  //   line.classList.add("border-line");
-  //   // line.innerHTML = `<span class="border-line"></span>`;
-  //   month_list.appendChild(line);
-  // }
 });
 
 let month_picker = calendar.querySelector("#month-picker");
@@ -319,10 +312,8 @@ function reset() {
   curr_month = { value: currDate.getMonth() };
   curr_year = { value: currDate.getFullYear() };
   generateCalendar(curr_month.value, curr_year.value);
-
-  // Rest dob display value and property
-  // document.getElementById("select-day").classList.remove("bg-green");
-  // document.getElementById("select-day").removeAttribute("id", "select-day");
+  // Closing month selection area
+  month_list.classList.remove("show");
   // Rest age display value and property
   document.getElementById("age").innerHTML = "";
   document.getElementById("age").classList.remove("asterisk");

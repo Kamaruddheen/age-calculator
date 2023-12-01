@@ -26,6 +26,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
 }
 
 .bg-green {
@@ -281,9 +282,9 @@ input[type=date] {
     left: 0;
     color: #9fffcb;
     background-color: #073b4c;
-    padding: 20px;
-    grid-template-columns: repeat(3, auto);
-    gap: 5px;
+    padding: 20px 13px;
+    grid-template-columns: repeat(3, 33%);
+    gap: 3px;
     display: grid;
     transform: scale(1.5);
     visibility: hidden;
@@ -310,6 +311,27 @@ input[type=date] {
 
 .month-list > div:hover {
     background-color: #06d69e60;
+}
+
+.month-list > div:nth-child(3n+1) {
+    border-right: 1px solid #06d6a0;
+}
+
+.month-list > div:nth-child(3n+2) {
+    border-right: 1px solid #06d6a0;
+    border-left: 1px solid #06d6a0;
+}
+
+.month-list > div:nth-child(3n+3) {
+    border-left: 1px solid #06d6a0;
+}
+
+.month-list > div:nth-child(n+4) {
+    border-top: 1px solid #06d6a0;
+}
+
+.month-list > div:not(:nth-last-child(-n + 3)) {
+    border-bottom: 1px solid #06d6a0;
 }
 
 /* Glassmorphism & Animation */
