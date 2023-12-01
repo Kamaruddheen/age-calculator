@@ -26,6 +26,7 @@ To use the age calculator,
 - [Color Palette](https://coolors.co)
 - [Glassmorphism CSS Generator](https://css.glass)
 - [Animation](https://blog.hubspot.com/website/css-animation-examples)
+- [Calendar Generator (Template)](https://github.com/trananhtuat/js-calendar)
 
 ## Built With
 

@@ -1,13 +1,10 @@
 // Set the current date as the today value
 let today = new Date();
 
-// Set input field default to today's date
-// document.getElementById("dob").valueAsDate = today
-
 // Set preset value on webpage load
 window.onload = function () {
   // Disabling future dates by setting max date to today
-  document.getElementById("dob").max = today.toISOString().split("T")[0];
+  // document.getElementById("dob").max = today.toISOString().split("T")[0];
 };
 
 // To Validate the birth date
@@ -79,10 +76,7 @@ function validate(today, dob) {
 }
 
 // To calculate and display the age
-function calculate() {
-  // Get birth date from input
-  let dob = document.getElementById("dob").valueAsDate;
-
+function calculate(dob) {
   // Validate input
   if (!validate(today, dob)) return false;
 
@@ -247,12 +241,21 @@ generateCalendar = (month, year) => {
       }
     }
     day.onclick = () => {
+      // removing active date and id
       calendar_days.childNodes.forEach((e) => {
         e.classList.remove("bg-green");
         e.removeAttribute("id", "select-day");
       });
+
+      // applying active date and id
       day.classList.add("bg-green");
       day.setAttribute("id", "select-day");
+
+      // Get birth date from input
+      console.log("Starting Age Calculation...");
+      let dob = new Date(year, month, day.innerText);
+      // Calculate Age
+      calculate(dob);
     };
     calendar_days.appendChild(day);
   }
