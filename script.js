@@ -151,8 +151,9 @@ function calculate(dob) {
 
 // Reset the birthdate and Age value
 function reset() {
-  // Set input field default to today's date
-  document.getElementById("dob").value = "";
+  // Rest dob display value and property
+  document.getElementById("select-day").classList.remove("bg-green");
+  document.getElementById("select-day").removeAttribute("id", "select-day");
   // Rest age display value and property
   document.getElementById("age").innerHTML = "";
   document.getElementById("age").classList.remove("asterisk");
@@ -254,6 +255,10 @@ generateCalendar = (month, year) => {
       // Get birth date from input
       console.log("Starting Age Calculation...");
       let dob = new Date(year, month, day.innerText);
+      dob.setHours(today.getHours());
+      dob.setMinutes(today.getMinutes());
+      dob.setSeconds(today.getSeconds());
+      console.log(dob, dob.toISOString());
       // Calculate Age
       calculate(dob);
     };
